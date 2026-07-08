@@ -1,7 +1,6 @@
 """
 Módulo Code
 -----------
-<<<<<<< HEAD
 Responsável por traduzir os campos mnemônicos (comp, dest e jump)
 das instruções do tipo C da linguagem Hack para seus respectivos
 códigos binários.
@@ -12,14 +11,6 @@ códigos binários.
 # o valor corresponde aos 7 bits que representam essa operação.
 COMP_TABLE = {
     # a = 0 (operações utilizando o registrador A)
-=======
-Traduz os campos mnemônicos (comp, dest, jump) de uma C-instruction
-para os bits binários correspondentes.
-"""
-
-COMP_TABLE = {
-    # a = 0 (usa A)
->>>>>>> 52601d4f6b65752e666885539092b802254a5bff
     '0':   '0101010',
     '1':   '0111111',
     '-1':  '0111010',
@@ -38,12 +29,8 @@ COMP_TABLE = {
     'A-D': '0000111',
     'D&A': '0000000',
     'D|A': '0010101',
-<<<<<<< HEAD
 
     # a = 1 (operações utilizando a memória M)
-=======
-    # a = 1 (usa M no lugar de A)
->>>>>>> 52601d4f6b65752e666885539092b802254a5bff
     'M':   '1110000',
     '!M':  '1110001',
     '-M':  '1110011',
@@ -56,7 +43,6 @@ COMP_TABLE = {
     'D|M': '1010101',
 }
 
-<<<<<<< HEAD
 # Tabela de conversão do campo "jump".
 # Cada instrução de salto é convertida para um código binário de 3 bits.
 JUMP_TABLE = {
@@ -68,22 +54,10 @@ JUMP_TABLE = {
     'JNE': '101',  # Salta se diferente de zero
     'JLE': '110',  # Salta se menor ou igual a zero
     'JMP': '111',  # Salto incondicional
-=======
-JUMP_TABLE = {
-    '':    '000',
-    'JGT': '001',
-    'JEQ': '010',
-    'JGE': '011',
-    'JLT': '100',
-    'JNE': '101',
-    'JLE': '110',
-    'JMP': '111',
->>>>>>> 52601d4f6b65752e666885539092b802254a5bff
 }
 
 
 class Code:
-<<<<<<< HEAD
     """
     Classe responsável por converter os campos de uma instrução
     do tipo C para sua representação binária.
@@ -103,17 +77,10 @@ class Code:
             raise ValueError(f"Campo comp inválido: '{comp_str}'")
 
         # Retorna o código binário correspondente.
-=======
-    @staticmethod
-    def comp(comp_str):
-        if comp_str not in COMP_TABLE:
-            raise ValueError(f"Campo comp inválido: '{comp_str}'")
->>>>>>> 52601d4f6b65752e666885539092b802254a5bff
         return COMP_TABLE[comp_str]
 
     @staticmethod
     def dest(dest_str):
-<<<<<<< HEAD
         """
         Converte o campo dest para 3 bits.
 
@@ -142,18 +109,10 @@ class Code:
         d3 = '1' if 'M' in dest_str else '0'
 
         # Retorna os três bits concatenados.
-=======
-        # ddd = bit(A) bit(D) bit(M), nessa ordem, independente de como
-        # o usuário escreveu (ex: "MD" e "DM" resultam no mesmo binário)
-        d1 = '1' if 'A' in dest_str else '0'
-        d2 = '1' if 'D' in dest_str else '0'
-        d3 = '1' if 'M' in dest_str else '0'
->>>>>>> 52601d4f6b65752e666885539092b802254a5bff
         return d1 + d2 + d3
 
     @staticmethod
     def jump(jump_str):
-<<<<<<< HEAD
         """
         Recebe o campo jump e retorna seu
         código binário de 3 bits.
@@ -168,8 +127,3 @@ class Code:
 
         # Retorna o código binário correspondente.
         return JUMP_TABLE[jump_str]
-=======
-        if jump_str not in JUMP_TABLE:
-            raise ValueError(f"Campo jump inválido: '{jump_str}'")
-        return JUMP_TABLE[jump_str]
->>>>>>> 52601d4f6b65752e666885539092b802254a5bff
