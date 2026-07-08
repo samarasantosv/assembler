@@ -3,11 +3,7 @@
 Montador que traduz programas em Assembly Hack (`.asm`) para código de máquina
 binário (`.hack`).
 
-<<<<<<< HEAD
-## 👥 Integrante
-=======
 ## 👥 Integrantes
->>>>>>> 52601d4f6b65752e666885539092b802254a5bff
 
 - SAMARA SANTOS VIEGAS — 2022042898
 
@@ -52,22 +48,10 @@ Isso vai gerar o arquivo `tests/add.hack` na mesma pasta do `.asm`.
 
 - ✅ `add.asm`
 - ✅ `max.asm`
-<<<<<<< HEAD
-- ✅ `rect.asm`
-- ✅ `pong.asm`
-=======
-- [ ] `rect.asm`
-- [ ] `pong.asm`
->>>>>>> 52601d4f6b65752e666885539092b802254a5bff
 
 Para validar, compare o `.hack` gerado com o esperado, ou carregue o arquivo
 no CPU Emulator do Nand2Tetris e verifique o comportamento do programa.
 
 ## 🎥 Vídeo de Apresentação
 
-<<<<<<< HEAD
-link: https://drive.google.com/drive/folders/1g0F49ZfFRoSRRQJbKrz2NGJokX8aPctX?usp=drive_link 
-
-=======
->>>>>>> 52601d4f6b65752e666885539092b802254a5bff
-
+Link: https://drive.google.com/drive/folders/1g0F49ZfFRoSRRQJbKrz2NGJokX8aPctX?usp=drive_link
